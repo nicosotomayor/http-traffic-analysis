@@ -30,7 +30,7 @@ HTTP traffic was captured directly on the target server.
 
 Se realizó la captura del tráfico HTTP directamente en el servidor objetivo.
 
-![Tcpdump Capture](screenshots/captura8.png)
+![Tcpdump Capture](screenshots/captura5.png)
 
 ---
 
@@ -43,25 +43,11 @@ HTTP requests were filtered to identify client-server interactions.
 
 Se filtraron las solicitudes HTTP para identificar la interacción entre cliente y servidor.
 
-![Wireshark Filter](screenshots/captura10.png)
+![Wireshark Filter](screenshots/captura11.png)
 
 ---
 
-## Analysis / Análisis
 
-Multiple HTTP GET requests were identified from:
-
-- Source: 192.168.93.128 (Kali)
-- Destination: 192.168.93.130 (Server)
-
-Se identificaron múltiples solicitudes HTTP tipo GET desde:
-
-- Origen: 192.168.93.128 (Kali)
-- Destino: 192.168.93.130 (Servidor)
-
-![HTTP Requests](screenshots/captura11.png)
-
----
 
 ### Suspicious Request Identified / Solicitud sospechosa identificada
 
