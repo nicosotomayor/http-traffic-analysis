@@ -29,7 +29,7 @@ tcpdump -i eth0 port 80 -w http_lab.pcap
 ### Traffic Capture (Metasploitable)
 Se realizó la captura del tráfico HTTP en el servidor.
 
-(([screenshots/capturaX.png](https://github.com/nicosotomayor/http-traffic-analysis/blob/main/screenshots/captura5.png))
+[screenshots/capturaX.png](https://github.com/nicosotomayor/http-traffic-analysis/blob/main/screenshots/captura5.png))
 
 ---
 
@@ -40,7 +40,7 @@ http.request
 ### Wireshark Filtering
 Filtrado de solicitudes HTTP en Wireshark.
 
-![Wireshark Filter]([screenshots/capturaX.png](https://github.com/nicosotomayor/http-traffic-analysis/blob/main/screenshots/captura11.png))
+[screenshots/capturaX.png](https://github.com/nicosotomayor/http-traffic-analysis/blob/main/screenshots/captura11.png)
 
 
 
@@ -50,7 +50,7 @@ Filtrado de solicitudes HTTP en Wireshark.
 
 GET /shell.php HTTP/1.1
 
-![Shell Request]([screenshots/capturaX.png](https://github.com/nicosotomayor/http-traffic-analysis/blob/main/screenshots/captura12.png))
+[screenshots/capturaX.png](https://github.com/nicosotomayor/http-traffic-analysis/blob/main/screenshots/captura12.png)
 
 ---
 
