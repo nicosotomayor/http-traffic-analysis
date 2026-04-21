@@ -1,6 +1,5 @@
 
 
-
 # HTTP Traffic Analysis - Suspicious Activity Detection
 
 ## Description (English)
@@ -13,10 +12,10 @@ En este laboratorio se analizó tráfico HTTP con el objetivo de identificar act
 
 ## Scenario / Escenario
 
-- Kali Linux → Traffic generation
-- Metasploitable → Web server
-- tcpdump → Traffic capture
-- Wireshark → Packet analysis
+- Kali Linux → Traffic generation / Generación de tráfico  
+- Metasploitable → Web server / Servidor web  
+- tcpdump → Traffic capture / Captura de tráfico  
+- Wireshark → Packet analysis / Análisis de paquetes  
 
 ---
 
@@ -26,31 +25,49 @@ Traffic was captured using tcpdump:
 
 tcpdump -i eth0 port 80 -w http_lab.pcap
 
-### Traffic Capture (Metasploitable)
-Se realizó la captura del tráfico HTTP en el servidor.
+### Traffic Capture (Metasploitable) / Captura de tráfico (Metasploitable)
+HTTP traffic was captured directly on the target server.
 
-[screenshots/capturaX.png](https://github.com/nicosotomayor/http-traffic-analysis/blob/main/screenshots/captura5.png))
+Se realizó la captura del tráfico HTTP directamente en el servidor objetivo.
+
+![Tcpdump Capture](screenshots/captura8.png)
 
 ---
 
-Then analyzed in Wireshark using the filter:
+Then the capture was analyzed in Wireshark using the following filter:
 
 http.request
 
-### Wireshark Filtering
-Filtrado de solicitudes HTTP en Wireshark.
+### Wireshark Filtering / Filtrado en Wireshark
+HTTP requests were filtered to identify client-server interactions.
 
-[screenshots/capturaX.png](https://github.com/nicosotomayor/http-traffic-analysis/blob/main/screenshots/captura11.png)
+Se filtraron las solicitudes HTTP para identificar la interacción entre cliente y servidor.
 
-
+![Wireshark Filter](screenshots/captura10.png)
 
 ---
 
-### Suspicious Request Identified
+## Analysis / Análisis
+
+Multiple HTTP GET requests were identified from:
+
+- Source: 192.168.93.128 (Kali)
+- Destination: 192.168.93.130 (Server)
+
+Se identificaron múltiples solicitudes HTTP tipo GET desde:
+
+- Origen: 192.168.93.128 (Kali)
+- Destino: 192.168.93.130 (Servidor)
+
+![HTTP Requests](screenshots/captura11.png)
+
+---
+
+### Suspicious Request Identified / Solicitud sospechosa identificada
 
 GET /shell.php HTTP/1.1
 
-[screenshots/capturaX.png](https://github.com/nicosotomayor/http-traffic-analysis/blob/main/screenshots/captura12.png)
+![Shell Request](screenshots/captura12.png)
 
 ---
 
@@ -60,9 +77,9 @@ The request to `/shell.php` is considered suspicious.
 
 Este tipo de endpoint suele estar asociado a:
 
-- webshells
-- accesos no autorizados
-- mecanismos de persistencia
+- webshells  
+- accesos no autorizados  
+- mecanismos de persistencia  
 
 ---
 
@@ -70,24 +87,24 @@ Este tipo de endpoint suele estar asociado a:
 
 This behavior may indicate:
 
-- Web exploitation attempts
-- Unauthorized access attempts
-- Reconnaissance activity
+- Web exploitation attempts  
+- Unauthorized access attempts  
+- Reconnaissance activities  
 
 Este comportamiento puede indicar:
 
-- intentos de explotación web
-- acceso a archivos maliciosos
-- reconocimiento del sistema
+- intentos de explotación web  
+- intentos de acceso no autorizado  
+- actividades de reconocimiento  
 
 ---
 
 ## Tools Used / Herramientas utilizadas
 
-- tcpdump
-- Wireshark
-- curl
-- Linux
+- tcpdump  
+- Wireshark  
+- curl  
+- Linux  
 
 ---
 
